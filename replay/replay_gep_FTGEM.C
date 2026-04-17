@@ -248,7 +248,7 @@ void replay_gep_FTGEM( UInt_t runnum=1234, Long_t nevents=5000, Long_t firsteven
   prefix = gSystem->Getenv("SBS_REPLAY");
   prefix += "/replay/";
 
-  TString odef_filename = "replay_FTGEM_gep.odef";
+  TString odef_filename = "replay_FTGEM_gep_nohisto.odef"; //kip turning off for test replays, not changing to nohisto odef when given as arg in replay for some reason
   
   odef_filename.Prepend( prefix );
 

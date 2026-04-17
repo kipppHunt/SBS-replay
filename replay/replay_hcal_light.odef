@@ -1,5 +1,6 @@
 # HCAL output definition file Current 10.21.22
 
+#variable sbs.hcal.ped
 #variable sbs.hcal.a_p
 #variable sbs.hcal.a_c
 #variable sbs.hcal.a_amp_p
@@ -49,6 +50,8 @@ variable sbs.hcal.trigtime
 block sbs.hcal.Ref.*
 
 block sbs.hcal.vtp.*
+
+variable sbs.hcal.npulses
 
 
 ############

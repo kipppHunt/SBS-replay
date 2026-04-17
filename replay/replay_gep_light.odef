@@ -1,11 +1,11 @@
 # Output variable definitions for analysis of all detectors replay_gep.C
 
 #include "replay_beam.odef"
-#include "replay_ECal_light.odef"
+#include "replay_ECal.odef"
 #include "replay_CDet_light.odef"
 #include "replay_hcal_light.odef"
-#include "replay_FTGEM_gep.odef"
-#include "replay_FPPGEM_gep.odef"
+#include "replay_FTGEM_gep_nohisto.odef"
+#include "replay_FPPGEM_gep_nohisto.odef"
 #include "replay_helicity.odef"
 #include "replay_gepheep.odef"
 #include "replay_sbs.odef"

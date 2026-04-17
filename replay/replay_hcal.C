@@ -123,7 +123,7 @@ void replay_hcal(int run_number = 124, uint nev = -1, uint nseg = 0)
     //THaAnalyzer* analyzer = new THaAnalyzer;
     
     //TString out_dir = gSystem->Getenv("OUT_DIR");
-    TString out_dir ="/adaqfs/home/a-onl/sbs/Rootfiles";
+    TString out_dir ="/lustre24/expphy/volatile/halla/sbs/nhunt/rootfiles";
     if( out_dir.IsNull() )  out_dir = ".";
     TString out_file = out_dir + "/" + exp + Form("_%d_%d.root", run_number,nev);
     
