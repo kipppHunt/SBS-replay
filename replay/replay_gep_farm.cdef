@@ -1,29 +1,26 @@
 # Add cuts here
 
 Block: CoarseReconstruct
-GoodCoinTime earm.ecal.nclus>0&&sbs.hcal.nclus>0&&abs(earm.ecal.atimeblk-sbs.hcal.atimeblk)<45.0
+GoodCoinTime earm.ecal.nclus>0&&sbs.hcal.nclus>0&&abs(earm.ecal.atimeblk-sbs.hcal.atimeblk)<20.0
 CoarseReconstruct_master GoodCoinTime
 
 Block: Physics
-#GoodFrontTrack sbs.tr.n>0
-#GoodBackTrack sbs.gemFPP.track.ntrack>0
-#GoodECAL earm.ecal.nclus>0
-#GoodHCAL sbs.hcal.nclus>0
-#GoodECALHCAL GoodECAL||GoodHCAL
-#AnyTrack GoodFrontTrack||GoodBackTrack
 GoodFrontTrack sbs.tr.n>0
 GoodECAL earm.ecal.nclus>0
 GoodHCAL sbs.hcal.nclus>0
 GoodECALHCAL GoodECAL||GoodHCAL
-GoodCoinTimeCalo (g.runnum<4043.&&abs(heep.dt_ADC-10.)<15.)||(g.runnum>=4043.&&abs(heep.dt_ADC)<20.0)
-GoodDPP abs(heep.dpp-0.0164)<0.05 #was 0.04
-GoodFPPSClose sbs.gemFPP.track.sclose<0.008 #was 0.005
-GoodTrVz abs(sbs.tr.vz[0]+0.1)<0.2 #was 0.175
+GoodCoinTimeCalo (g.runnum<4043.&&abs(heep.dt_ADC)<25.)||(g.runnum>=4043.&&abs(heep.dt_ADC)<20.0)
+GoodDPP abs(heep.dpp-0.0164)<0.08 #was 0.04 #was 0.06 opening for optics
+GoodFPPSClose sbs.gemFPP.track.sclose<0.008 #was 0.005 #was .008 opening for optics
+GoodTrVz abs(sbs.tr.vz[0]+0.1)<0.25 #was 0.175 #was .25 opening for optics
 GoodFTNHits (sbs.gemFT.track.nhits[0]>4||sbs.gemFT.track.ngoodhits[0]>2)
 GoodFPPNHits (sbs.gemFPP.track.nhits[0]>4||sbs.gemFPP.track.ngoodhits[0]>2)
 GoodCaloBlockNum earm.ecal.nblk>2&&sbs.hcal.nblk>1
-GoodECalPos sqrt(pow((heep.dxECAL-0.01+0.025*earm.ecal.x)/0.0125,2)+pow((heep.dyECAL-(0.0019+0.00365*earm.ecal.x+0.0171*pow(earm.ecal.x,2)+0.01448*pow(earm.ecal.x,3)))/0.0157,2))<=4.5
-GoodHCalPos sqrt(pow((sbs.gemFPP.track.y+sbs.gemFPP.track.yp*6.7-sbs.hcal.y+0.0132)/0.0425,2)+pow((sbs.gemFPP.track.x+sbs.gemFPP.track.xp*6.7-sbs.hcal.x-0.192)/0.0497,2))<=3.5
+#GoodECalPos sqrt(pow((heep.dxECAL-0.01+0.025*earm.ecal.x)/0.0125,2)+pow((heep.dyECAL-(0.0019+0.00365*earm.ecal.x+0.0171*pow(earm.ecal.x,2)+0.01448*pow(earm.ecal.x,3)))/0.0157,2))<=5.0
+#GoodHCalPos sqrt(pow((sbs.gemFPP.track.y+sbs.gemFPP.track.yp*6.7-sbs.hcal.y+0.0132)/0.0425,2)+pow((sbs.gemFPP.track.x+sbs.gemFPP.track.xp*6.7-sbs.hcal.x-0.192)/0.0497,2))<=4.5
 
-Physics_master GoodECALHCAL&&GoodFrontTrack&&GoodCoinTimeCalo&&GoodDPP&&GoodFPPSClose&&GoodTrVz&&GoodFTNHits&&GoodFPPNHits&&GoodCaloBlockNum&&GoodECalPos&&GoodHCalPos
+#Physics_master GoodECALHCAL&&GoodFrontTrack&&GoodCoinTimeCalo&&GoodDPP&&GoodFPPSClose&&GoodTrVz&&GoodFTNHits&&GoodFPPNHits&&GoodCaloBlockNum&&GoodECalPos&&GoodHCalPos
+
+Physics_master GoodECALHCAL&&GoodFrontTrack&&GoodCoinTimeCalo&&GoodTrVz&&GoodFTNHits&&GoodFPPNHits&&GoodCaloBlockNum #opening for optics
+
 
