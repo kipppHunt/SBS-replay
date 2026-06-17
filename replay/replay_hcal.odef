@@ -50,7 +50,7 @@ block sbs.hcal.Ref.*
 
 block sbs.hcal.vtp.*
 
-variable sbs.hcal.npulses
+#variable sbs.hcal.npulses
 
 
 

@@ -69,8 +69,8 @@ variable earm.ecal.idblk
 variable earm.ecal.index
 variable earm.ecal.x
 variable earm.ecal.y
-variable earm.ecal.npulses
-variable earm.ecal.noverlaps
+#variable earm.ecal.npulses
+#variable earm.ecal.noverlaps
 
 
 block earm.ecal.clus.*
